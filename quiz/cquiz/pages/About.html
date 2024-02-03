@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<link rel="stylesheet" href="{% static 'About.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="head">
+    <h2>Welcome to the intraclass quiz competition of cse D</h2>
+</div>
+<div id="box">
+    <form method="POST" id="fo">
+        {% csrf_token %}
+        <div id="he1">
+            <h3>Please Enter your details</h3>
+        </div>
+        <table>
+            {{values.as_table}}
+        </table>
+        <a href="/quiz"><button type="submit">SUBMIT</button></a>
+        <a href="/quiz"><div>ENTER THE QUIZ</div></a>
+    </form>
+</div>
+</body>
+</html>

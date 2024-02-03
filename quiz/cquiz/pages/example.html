@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function selected(ans)
+        {
+            document.getElementById("selectedanswer").value=ans;
+        }
+    </script>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {% for x in values %}
+            <h3>{{x.qno}}</h3>
+            <div>
+                {{x.question}}
+            </div>
+            <div onclick="selected(1)">{{x.choice1}}</div>
+            <div onclick="selected(2)">{{x.choice2}}</div>
+            <div onclick="selected(3)">{{x.choice3}}</div>
+            <div onclick="selected(4)">{{x.choice4}}</div>
+            <input type="hidden" id='selectedanswer' name="selectedanswer">
+        {% endfor %}
+        <button>Next</button>
+    </form>
+</body>
+</html>

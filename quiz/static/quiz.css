@@ -1,0 +1,43 @@
+body{
+    margin: auto;
+    background-color: black;
+}
+#quest{
+    background-color: white;
+    height:80vh;
+    border-radius: 3vh;
+    width: 57vw;
+    margin-left: 30vh;
+    margin-top: 15vh;
+}
+#qn{
+    background-color: bisque;
+    margin-left: 3vw;
+    margin-top: 8vh;
+    border-radius: 2vh;
+    height:40vh;
+    position:absolute;
+    width: 50vw;
+}
+#choice{
+    height: 20vh;
+    width: 50vw;
+    margin-top:50vh;
+    margin-left: 3vw;
+    position: absolute;
+    text-align: center;
+    background-color: aqua;
+    border-radius: 2vh;
+}
+input{
+    margin: 1vh;
+    cursor: pointer;
+}
+#choice button{
+    height: 2vh;
+    width: 10vw;
+    text-align: center;
+    background-color:blue;
+    border-radius: 2vh;
+    
+}

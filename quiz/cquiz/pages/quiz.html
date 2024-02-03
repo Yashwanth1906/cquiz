@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="{% static 'quiz.css' %}">
+<script>
+    document.getElementById('selected').value=0;
+    function myfun(r)
+    {
+        document.getElementById('selected').value=r;
+    }
+</script>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <div id="quest">
+        {% for i in values %}
+        <div id="qn">
+            {{i.question|linebreaks}}&nbsp
+        </div>
+            <div id="choice">
+                <input type="radio" name="selected" value="1">{{i.choice1}} <br>
+                <input type="radio" name="selected" value="2">{{i.choice2}} <br>
+                <input type="radio" name="selected" value="3">{{i.choice3}} <br>
+                <input type="radio" name="selected" value="4">{{i.choice4}} <br>
+                <button>NEXT</button>
+            </div>
+        
+        {% endfor %}
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<link rel="stylesheet" href="{% static 'update.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <form method="POST" id="fo">
+            {% csrf_token %}
+            <table>
+                {{values.as_table}}
+            </table>
+            <button type="submit">SAVE</button>
+        </form>
+    </div>
+</body>
+</html>
